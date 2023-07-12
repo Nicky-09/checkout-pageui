@@ -1,103 +1,392 @@
 "use client";
+import { CreditCardFilled, QuestionCircleOutlined } from "@ant-design/icons";
 import { Button, Input, Radio } from "antd";
+import Image from "next/image";
 import React from "react";
 
 const DetailForm = () => {
   return (
-    <div className="flex flex-col sm:flex-row">
-      <div>
-        <div>
-          <h2 className="text-2xl font-bold ">Confirm and Pay</h2>
-          <div className="mt-4">
-            <p className="text-lg">Enter your details</p>
-            <div className="mt-4 flex flex-col sm:flex-row gap-4">
-              <div className="w-full">
-                <div className="w-full">
-                  <Input placeholder="First Name" />
-                </div>
-                <div className="w-full">
-                  <Input placeholder="Last Name" />
-                </div>
-              </div>
-              <div className="w-full">
-                <div className="w-full">
-                  <Input placeholder="Email" />
-                </div>
-                <div className="w-full ">
-                  <Input placeholder="Address" />
+    <div className="mt-10">
+      <div className="flex flex-col">
+        <div className="flex flex-col-reverse justify-between gap-4 sm:flex-row">
+          {/* left side bar */}
+
+          {/* left side bar */}
+
+          <div>
+            <div>
+              <h2 className="text-4xl text-color ffont-semibold ">
+                Confirm and pay
+              </h2>
+              <div className="mt-8">
+                <p className="text-lg mb-1">Enter your details</p>
+                <p className="sub-color text-sm">
+                  Enter your details sending you tickets{" "}
+                </p>
+                <div className="mt-4 flex flex-col sm:flex-row gap-4">
+                  <div className="w-full">
+                    <div className="w-full mb-4">
+                      <Input placeholder="First Name" size="large" />
+                    </div>
+                    <div className="w-full">
+                      <Input placeholder="Last Name" size="large" />
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <div className="w-full mb-4">
+                      <Input placeholder="Email" size="large" />
+                    </div>
+                    <div className="w-full ">
+                      <Input placeholder="Address" size="large" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        {/* additional */}
-        <div>
-          <div className="mt-4">
-            <p className="text-lg">Enter your details</p>
-            <div className="mt-4 flex flex-col sm:flex-row gap-4">
-              <div className="w-full">
-                <Input placeholder="First Name" />
-              </div>
-              <div className="w-full ">
-                <Input placeholder="Last Name" />
+            {/* additional */}
+            <div>
+              <div className="mt-10 mb-4">
+                <p className="text-lg mb-1">Additional details</p>
+                <p className="sub-color text-sm">
+                  We need a few more details to complete your registration{" "}
+                </p>
+                <div className="mt-4 flex flex-col sm:flex-row gap-4">
+                  <div className="w-full">
+                    <Input placeholder="First Name" size="large" />
+                  </div>
+                  <div className="w-full ">
+                    <Input placeholder="Last Name" size="large" />
+                  </div>
+                </div>
               </div>
             </div>
+            {/* credit */}
+            <div>
+              <div className="mt-10">
+                <p className="text-lg mb-1">Select your mode of payment</p>
+                <p className="sub-color text-sm">
+                  Payment with tickete are secure and encrypted.{" "}
+                </p>
+                <div className="flex justify-between mt-6 mb-6">
+                  <div className="flex items-center gap-4 text-sm">
+                    <CreditCardFilled /> Credit and Debit card
+                  </div>
+                  <Radio />
+                </div>
+                <div className="mt-4 flex flex-col sm:flex-row gap-4">
+                  <div className="w-full">
+                    <div className="w-full mb-4">
+                      <Input placeholder="First Name" size="large" />
+                    </div>
+                    <div className="w-full">
+                      <Input placeholder="Last Name" size="large" />
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <div className="w-full mb-4">
+                      <Input placeholder="Email" size="large" />
+                    </div>
+                    <div className="w-full ">
+                      <Input placeholder="Address" size="large" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* klarna */}
+            <hr className="mt-4 mb-4" />
+            <div className="flex justify-between mt-4 mb-4">
+              <div className="flex items-center gap-4 text-sm">
+                <CreditCardFilled /> Klarna
+              </div>
+              <Radio />
+            </div>
+            <hr className="mt-4 mb-8" />
+            {/* total price */}
+            <div className="text-xl">
+              <span>Total: </span>
+              <span> price</span>
+              <p className="sub-color text-sm underline-offset-auto">
+                You will pay in currency
+              </p>
+            </div>
+            {/* receive notif */}
+            <div className="mt-6 bg-radio p-4 rounded-md">
+              <Radio>
+                {" "}
+                Receive travel tips , suggestions and offers in city by email
+              </Radio>
+            </div>
+            <div className="sub-color text-sm mt-4 mb-4">
+              {" "}
+              With payment, you agree to the terms and conditions of Tickete &
+              the activity provider
+            </div>
+            <div>
+              <Button
+                size="large"
+                className="bg-black text-white rounded-lg flex items-center"
+              >
+                Confirm and pay
+                <CreditCardFilled />
+              </Button>
+            </div>
           </div>
-        </div>
-        {/* credit */}
-        <div>
-          <h2 className="text-2xl font-bold ">Confirm and Pay</h2>
-          <div className="mt-4">
-            <p className="text-lg">Enter your details</p>
-            <div className="mt-4 flex flex-col sm:flex-row gap-4">
-              <div className="w-full">
-                <Input placeholder="First Name" />
+
+          {/* right side bar */}
+
+          {/* right side bar */}
+
+          {/* right side bar */}
+          <div>
+            <div className="relative overflow-hidden mb-2">
+              <Image
+                className="rounded-md"
+                object-fit="cover"
+                //   fill={true}
+                alt="no details"
+                src="/travel.png"
+                height="320"
+                width="350"
+              />
+            </div>
+            <p>Description of the travel and the booking details </p>
+            <div className="mt-4 text-sm">
+              <div className="flex gap-4 mb-2">
+                {" "}
+                <span>
+                  <Image
+                    alt="no details"
+                    src="/Ticket.png"
+                    height="20"
+                    width="20"
+                  />
+                </span>
+                <span>{"<variant name>"}</span>
               </div>
-              <div className="w-full ">
-                <Input placeholder="Last Name" />
+              <div className="flex gap-4 mb-2">
+                {" "}
+                <span>
+                  <Image
+                    alt="no details"
+                    src="/CalendarBlank.png"
+                    height="20"
+                    width="20"
+                  />
+                </span>
+                <span>{"<date>"}</span>
               </div>
-              <div className="w-full">
-                <Input placeholder="Email" />
+              <div className="flex gap-4 mb-2">
+                {" "}
+                <span>
+                  <Image
+                    alt="no details"
+                    src="/Clock.png"
+                    height="20"
+                    width="20"
+                  />
+                </span>
+                <span>{"<time>"}</span>
               </div>
-              <div className="w-full">
-                <Input placeholder="Address" />
+            </div>
+            <hr className="mt-4 mb-6" />
+            {/* tickets overview */}
+            <div>
+              <p>Tickets Overview</p>
+              <div className="flex flex-col text-sm">
+                <div className="flex justify-between mt-2">
+                  <span>{"<pax type>"}</span>
+                  <span>{"<price>"}</span>
+                </div>
+                <div className="flex justify-between mt-2">
+                  <span>{"<pax type>"}</span>
+                  <span>{"<price>"}</span>
+                </div>
+                <div className="flex justify-between mt-2">
+                  <span>{"<fee>"}</span>
+                  <span>{"<price>"}</span>
+                </div>
+                <div className="flex justify-between mt-2 discount">
+                  <span>{"<discount applied>"}</span>
+                  <span>{"< - price>"}</span>
+                </div>
               </div>
+            </div>
+            <hr className="mt-4 mb-4" />
+            {/* promo cdde  */}
+            <div className="flex gap-4 text-sm discount">
+              <span>
+                <Image alt="no details" src="/Tag.png" height="20" width="20" />
+              </span>
+              <span>Have a promo code ?</span>
+            </div>
+            <hr className="mt-4 mb-4" />
+            {/* total price */}
+            <div>
+              <div className="flex justify-between">
+                <span>Total</span>
+                <span>{"<price>"}</span>
+              </div>
+              <span className="text-sm sub-color">
+                You will pay in {"<currency>"}
+              </span>
+            </div>
+            {/* free cancellation */}
+            <div className="mt-4 mb-4 bg-radio p-4 rounded-md">
+              <p>Free cancellation</p>
+              <p className="text-sm sub-color">
+                Cancel before {"<date>"} for a full refund
+              </p>
             </div>
           </div>
         </div>
 
-        {/* klarna */}
+        {/* frequently sked questions */}
+
+        {/* frequently sked questions */}
         <hr className="mt-4 mb-4" />
-        <div className="flex justify-between mb-4">
-          Klarna
-          <Radio />
+        <div className="flex flex-col justify-between gap-10 sm:flex-row">
+          <div>
+            <p className="text-lg mt-4">Frequently asked questions</p>
+            <div className="mt-4">
+              <p>Are my tickets tranferable?</p>
+              <p className="flex flex-wrap sub-color text-sm mt-2">
+                No. The tickets can only be used by the person(s) whose details
+                are indicated on the voucher.
+              </p>
+            </div>
+            <div className="mt-4">
+              <p>Are my tickets tranferable?</p>
+              <p className="flex flex-wrap sub-color text-sm mt-2">
+                No. The tickets can only be used by the person(s) whose details
+                are indicated on the voucher.
+              </p>
+            </div>
+            <div className="mt-4">
+              <p>Are my tickets tranferable?</p>
+              <p className="flex flex-wrap sub-color text-sm mt-2">
+                No. The tickets can only be used by the person(s) whose details
+                are indicated on the voucher.
+              </p>
+            </div>
+            <div className="mt-4">
+              <p>Are my tickets tranferable?</p>
+              <p className="flex flex-wrap sub-color text-sm mt-2">
+                No. The tickets can only be used by the person(s) whose details
+                are indicated on the voucher.
+              </p>
+            </div>
+            <div className="mt-4">
+              <p>Are my tickets tranferable?</p>
+              <p className="flex flex-wrap sub-color text-sm mt-2">
+                No. The tickets can only be used by the person(s) whose details
+                are indicated on the voucher.
+              </p>
+            </div>
+          </div>
+
+          <div className="dark-pumpkin">
+            <div className="pumpkin">
+              <div className="flex justify-between">
+                <span>Need help?</span>
+                <span>
+                  <Image
+                    alt="no details"
+                    src="/ChatsCircle.png"
+                    height="30"
+                    width="30"
+                  />
+                </span>
+              </div>
+              <p className="text-sm mb-2"> We are here to help , 24*7</p>
+              <Button className="rounded-md chat">Chat with us </Button>
+            </div>
+          </div>
         </div>
-        <hr className="mt-4 mb-4" />
-        {/* total price */}
-        <div>
-          <span>Total:</span>
-          <span>Price</span>
-          <p>You will pay in currency</p>
-        </div>
-        {/* receive notif */}
-        <div className="mt-6">
-          <Radio>
-            {" "}
-            Receive travel tips , suggestions and offers in city by email
-          </Radio>
-        </div>
-        <div>
-          {" "}
-          with payment, you agree to the terms and conditions of Tickete & the
-          activity provider
-        </div>
-        <Button>Confirm and pay</Button>
       </div>
 
-      <div>
-        sdfsdef
-        {/* <Image> */}
+      <hr className="mt-4 mb-10" />
+      {/* tickete promise */}
+      <p className=" mb-6">The Tickete promise</p>
+      <div className="flex flex-col justify-between sm:flex-row gap-4">
+        <div className="promise-card">
+          <div className="mb-6">
+            <Image
+              alt="no details"
+              src="/CircleWavyCheck.png"
+              height="30"
+              width="30"
+            />
+          </div>
+          <p>Official Tickets</p>
+          <p className="sub-color text-sm">
+            Authorised reseller to top attraction
+          </p>
+        </div>
+        <div className="promise-card">
+          <div className="mb-6">
+            <Image
+              alt="no details"
+              src="/ChatsCircle.png"
+              height="30"
+              width="30"
+            />
+          </div>
+          <p>Official Tickets</p>
+          <p className="sub-color text-sm">
+            Authorised reseller to top attraction
+          </p>
+        </div>
+        <div className="promise-card">
+          <div className="mb-6">
+            <Image
+              alt="no details"
+              src="/CalendarBlank1.png"
+              height="30"
+              width="30"
+            />
+          </div>
+          <p>Official Tickets</p>
+          <p className="sub-color text-sm">
+            Authorised reseller to top attraction
+          </p>
+        </div>
+        <div className="promise-card">
+          <div className="mb-6">
+            <Image
+              alt="no details"
+              src="/ShieldCheckered1.png"
+              height="30"
+              width="30"
+            />
+          </div>
+          <p>Official Tickets</p>
+          <p className="sub-color text-sm">
+            Authorised reseller to top attraction
+          </p>
+        </div>
       </div>
+
+      {/* footer */}
+
+      {/* <div className="mb-8 footer-tickete">
+        <div>tickete</div>
+        <hr className="mt-4 mb-4" />
+        <div className="flex justify-between">
+          <div>
+            <span>Tickete</span>
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Cancellation policy</span>
+          </div>
+          <div>
+            <span>insta</span>
+            <span>Facebook twitter</span>
+            <span>insta</span>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };

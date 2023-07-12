@@ -1,19 +1,21 @@
 "use client";
 import { CreditCardFilled, QuestionCircleOutlined } from "@ant-design/icons";
+import { InputAdornment, TextField } from "@mui/material";
 import { Button, Input, Radio } from "antd";
 import Image from "next/image";
 import React from "react";
+import CollapseQuestions from "./CollapseQuestions";
 
 const DetailForm = () => {
   return (
     <div className="mt-10">
       <div className="flex flex-col">
-        <div className="flex flex-col-reverse justify-between gap-4 sm:flex-row">
+        <div className="flex flex-col-reverse justify-between gap-10 sm:flex-row">
           {/* left side bar */}
 
           {/* left side bar */}
 
-          <div>
+          <div className="flex-1">
             <div>
               <h2 className="text-4xl text-color ffont-semibold ">
                 Confirm and pay
@@ -23,21 +25,56 @@ const DetailForm = () => {
                 <p className="sub-color text-sm">
                   Enter your details sending you tickets{" "}
                 </p>
-                <div className="mt-4 flex flex-col sm:flex-row gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <div className="w-full">
-                    <div className="w-full mb-4">
-                      <Input placeholder="First Name" size="large" />
+                    <div className="w-full mb-6">
+                      <TextField
+                        label="<Full Name>"
+                        variant="outlined"
+                        defaultValue="Tickete Inc"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        fullWidth
+                      />
                     </div>
                     <div className="w-full">
-                      <Input placeholder="Last Name" size="large" />
+                      <TextField
+                        label="<Full Name>"
+                        variant="outlined"
+                        defaultValue="hi@tickete.com"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        fullWidth
+                      />
                     </div>
                   </div>
                   <div className="w-full">
-                    <div className="w-full mb-4">
-                      <Input placeholder="Email" size="large" />
+                    <div className="w-full mb-6">
+                      <TextField
+                        label="<Phone Number>"
+                        variant="outlined"
+                        defaultValue="+852345345678"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        // size="small"
+                        fullWidth
+                      />
                     </div>
                     <div className="w-full ">
-                      <Input placeholder="Address" size="large" />
+                      <TextField
+                        label="<Full Name>"
+                        variant="outlined"
+                        defaultValue="hi@tickete.com"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        fullWidth
+                        error
+                        helperText="<error message>"
+                      />
                     </div>
                   </div>
                 </div>
@@ -46,16 +83,32 @@ const DetailForm = () => {
             {/* additional */}
             <div>
               <div className="mt-10 mb-4">
-                <p className="text-lg mb-1">Additional details</p>
+                <p className="text-lg mb-1">Additional information</p>
                 <p className="sub-color text-sm">
                   We need a few more details to complete your registration{" "}
                 </p>
-                <div className="mt-4 flex flex-col sm:flex-row gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <div className="w-full">
-                    <Input placeholder="First Name" size="large" />
+                    <TextField
+                      label="<Full Name>"
+                      variant="outlined"
+                      defaultValue="<custom input>"
+                      inputProps={{
+                        style: { fontSize: 14, color: "#474747" },
+                      }}
+                      fullWidth
+                    />
                   </div>
                   <div className="w-full ">
-                    <Input placeholder="Last Name" size="large" />
+                    <TextField
+                      label="<dropdown>"
+                      variant="outlined"
+                      defaultValue="+852345345678"
+                      inputProps={{
+                        style: { fontSize: 14, color: "#474747" },
+                      }}
+                      fullWidth
+                    />
                   </div>
                 </div>
               </div>
@@ -76,18 +129,70 @@ const DetailForm = () => {
                 <div className="mt-4 flex flex-col sm:flex-row gap-4">
                   <div className="w-full">
                     <div className="w-full mb-4">
-                      <Input placeholder="First Name" size="large" />
+                      <TextField
+                        label="<Name on Card>"
+                        variant="outlined"
+                        defaultValue="Tickete Inc"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        // size="small"
+                        fullWidth
+                      />
                     </div>
+
                     <div className="w-full">
-                      <Input placeholder="Last Name" size="large" />
+                      <TextField
+                        label="<Expiry Date>"
+                        variant="outlined"
+                        defaultValue="06/26"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        // size="small"
+                        fullWidth
+                      />
                     </div>
                   </div>
                   <div className="w-full">
                     <div className="w-full mb-4">
-                      <Input placeholder="Email" size="large" />
+                      <TextField
+                        label="<Card Number>"
+                        variant="outlined"
+                        defaultValue="1234 1234 1234 1234"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="start">
+                              <Image
+                                alt="no details"
+                                src="/Visa.png"
+                                height="70"
+                                width="70"
+                              />
+                            </InputAdornment>
+                          ),
+                        }}
+                        // endAdornment={
+                        //   <InputAdornment position="end"></InputAdornment>
+                        // }
+                        // size="small"
+                        fullWidth
+                      />
                     </div>
                     <div className="w-full ">
-                      <Input placeholder="Address" size="large" />
+                      <TextField
+                        label="<CVV/CVC>"
+                        variant="outlined"
+                        defaultValue="***"
+                        inputProps={{
+                          style: { fontSize: 14, color: "#474747" },
+                        }}
+                        // size="small"
+                        fullWidth
+                      />
                     </div>
                   </div>
                 </div>
@@ -106,7 +211,7 @@ const DetailForm = () => {
             {/* total price */}
             <div className="text-xl">
               <span>Total: </span>
-              <span> price</span>
+              <span> {"<price>"}</span>
               <p className="sub-color text-sm underline-offset-auto">
                 You will pay in currency
               </p>
@@ -129,7 +234,13 @@ const DetailForm = () => {
                 className="bg-black text-white rounded-lg flex items-center"
               >
                 Confirm and pay
-                <CreditCardFilled />
+                <Image
+                  alt="no details"
+                  className="ml-2"
+                  src="/ShieldCheckered.png"
+                  height="20"
+                  width="20"
+                />
               </Button>
             </div>
           </div>
@@ -250,39 +361,7 @@ const DetailForm = () => {
           <div>
             <p className="text-lg mt-4">Frequently asked questions</p>
             <div className="mt-4">
-              <p>Are my tickets tranferable?</p>
-              <p className="flex flex-wrap sub-color text-sm mt-2">
-                No. The tickets can only be used by the person(s) whose details
-                are indicated on the voucher.
-              </p>
-            </div>
-            <div className="mt-4">
-              <p>Are my tickets tranferable?</p>
-              <p className="flex flex-wrap sub-color text-sm mt-2">
-                No. The tickets can only be used by the person(s) whose details
-                are indicated on the voucher.
-              </p>
-            </div>
-            <div className="mt-4">
-              <p>Are my tickets tranferable?</p>
-              <p className="flex flex-wrap sub-color text-sm mt-2">
-                No. The tickets can only be used by the person(s) whose details
-                are indicated on the voucher.
-              </p>
-            </div>
-            <div className="mt-4">
-              <p>Are my tickets tranferable?</p>
-              <p className="flex flex-wrap sub-color text-sm mt-2">
-                No. The tickets can only be used by the person(s) whose details
-                are indicated on the voucher.
-              </p>
-            </div>
-            <div className="mt-4">
-              <p>Are my tickets tranferable?</p>
-              <p className="flex flex-wrap sub-color text-sm mt-2">
-                No. The tickets can only be used by the person(s) whose details
-                are indicated on the voucher.
-              </p>
+              <CollapseQuestions />
             </div>
           </div>
 
@@ -333,9 +412,9 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>Official Tickets</p>
+          <p>24/7 dedicated support</p>
           <p className="sub-color text-sm">
-            Authorised reseller to top attraction
+            {"We're here to help, talk to an expert"}
           </p>
         </div>
         <div className="promise-card">
@@ -347,9 +426,9 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>Official Tickets</p>
+          <p>Flexible bookings</p>
           <p className="sub-color text-sm">
-            Authorised reseller to top attraction
+            Book stress-free with easy cancellation
           </p>
         </div>
         <div className="promise-card">
@@ -361,9 +440,9 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>Official Tickets</p>
+          <p>100% secure payments</p>
           <p className="sub-color text-sm">
-            Authorised reseller to top attraction
+            Internationally recognized encrypted payment process
           </p>
         </div>
       </div>

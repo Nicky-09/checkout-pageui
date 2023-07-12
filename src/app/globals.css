@@ -77,3 +77,8 @@ body {
 .footer-icon {
   color: #ebebeb;
 }
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-radius: 8px !important;
+  border-color: #e9e9e9;
+}

@@ -389,7 +389,7 @@ const DetailForm = () => {
       {/* tickete promise */}
       <p className=" mb-6">The Tickete promise</p>
       <div className="flex flex-col justify-between sm:flex-row gap-4">
-        <div className="promise-card">
+        <div className="promise-card border-0 sm:border border-solid border-gray-300">
           <div className="mb-6">
             <Image
               alt="no details"
@@ -403,7 +403,7 @@ const DetailForm = () => {
             Authorised reseller to top attraction
           </p>
         </div>
-        <div className="promise-card">
+        <div className="promise-card border-0 sm:border border-solid border-gray-300">
           <div className="mb-6">
             <Image
               alt="no details"
@@ -417,7 +417,7 @@ const DetailForm = () => {
             {"We're here to help, talk to an expert"}
           </p>
         </div>
-        <div className="promise-card">
+        <div className="promise-card border-0 sm:border border-solid border-gray-300">
           <div className="mb-6">
             <Image
               alt="no details"
@@ -431,7 +431,7 @@ const DetailForm = () => {
             Book stress-free with easy cancellation
           </p>
         </div>
-        <div className="promise-card">
+        <div className="promise-card flex flex-row justify-around border-0 gap-2 sm:border border-solid border-gray-300 sm: sm:flex-col">
           <div className="mb-6">
             <Image
               alt="no details"
@@ -440,10 +440,12 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>100% secure payments</p>
-          <p className="sub-color text-sm">
-            Internationally recognized encrypted payment process
-          </p>
+          <div>
+            <p>100% secure payments</p>
+            <p className="sub-color text-sm">
+              Internationally recognized encrypted payment process
+            </p>
+          </div>
         </div>
       </div>
 

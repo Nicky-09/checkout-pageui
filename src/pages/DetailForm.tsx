@@ -1,18 +1,41 @@
 "use client";
 import { CreditCardFilled, QuestionCircleOutlined } from "@ant-design/icons";
-import { InputAdornment, TextField } from "@mui/material";
-import { Button, Input, Radio } from "antd";
+import {
+  FormControl,
+  InputAdornment,
+  InputLabel,
+  MenuItem,
+  TextField,
+} from "@mui/material";
+import { Button, Input, Radio, Select } from "antd";
 import Image from "next/image";
 import React from "react";
 import CollapseQuestions from "./CollapseQuestions";
 
 const DetailForm = () => {
+  const currencies = [
+    {
+      value: "USD",
+      label: "$",
+    },
+    {
+      value: "<dropdown>",
+      label: "<dropdown>",
+    },
+    {
+      value: "BTC",
+      label: "฿",
+    },
+    {
+      value: "JPY",
+      label: "¥",
+    },
+  ];
+
   return (
     <div className="mt-10">
       <div className="flex flex-col">
-        <h2 className="text-4xl text-color ffont-semibold mb-4 ">
-          Confirm and pay
-        </h2>
+        <h2 className="text-4xl text-color mb-4 confirm">Confirm and pay</h2>
         <div className="flex flex-col-reverse justify-between gap-10 sm:flex-row">
           {/* left side bar */}
 
@@ -21,9 +44,10 @@ const DetailForm = () => {
           <div className="flex-1">
             <div>
               <div className="mt-0 sm:mt-8">
-                <p className="text-lg mb-1">Enter your details</p>
+                <p className="text-lg mb-1 details">Enter your details</p>
                 <p className="sub-color text-sm">
-                  Enter your details sending you tickets{" "}
+                  We'll be sending your tickets to the details below. Booking
+                  for a friend? Add their details.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <div className="w-full">
@@ -59,6 +83,18 @@ const DetailForm = () => {
                         inputProps={{
                           style: { fontSize: 14, color: "#474747" },
                         }}
+                        InputProps={{
+                          startAdornment: (
+                            <InputAdornment position="start">
+                              <Image
+                                alt="no details"
+                                src="/MasterFlag.png"
+                                height="30"
+                                width="30"
+                              />
+                            </InputAdornment>
+                          ),
+                        }}
                         // size="small"
                         fullWidth
                       />
@@ -83,7 +119,7 @@ const DetailForm = () => {
             {/* additional */}
             <div>
               <div className="mt-10 mb-4">
-                <p className="text-lg mb-1">Additional information</p>
+                <p className="text-lg mb-1 details">Additional information</p>
                 <p className="sub-color text-sm">
                   We need a few more details to complete your registration{" "}
                 </p>
@@ -100,15 +136,31 @@ const DetailForm = () => {
                     />
                   </div>
                   <div className="w-full ">
-                    <TextField
+                    {/* <TextField
                       label="<dropdown>"
+                      select
                       variant="outlined"
-                      defaultValue="+852345345678"
+                      defaultValue="EUR"
                       inputProps={{
                         style: { fontSize: 14, color: "#474747" },
                       }}
                       fullWidth
-                    />
+                    /> */}
+                    <TextField
+                      select
+                      label="<dropdown>"
+                      defaultValue="<dropdown>"
+                      inputProps={{
+                        style: { fontSize: 14, color: "#474747" },
+                      }}
+                      fullWidth
+                    >
+                      {currencies.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
                   </div>
                 </div>
               </div>
@@ -116,7 +168,9 @@ const DetailForm = () => {
             {/* credit */}
             <div>
               <div className="mt-10">
-                <p className="text-lg mb-1">Select your mode of payment</p>
+                <p className="text-lg mb-1 details">
+                  Select your mode of payment
+                </p>
                 <p className="sub-color text-sm">
                   Payment with tickete are secure and encrypted.{" "}
                 </p>
@@ -209,10 +263,10 @@ const DetailForm = () => {
             </div>
             <hr className="mt-4 mb-8" />
             {/* total price */}
-            <div className="text-xl">
+            <div className="text-xl details">
               <span>Total: </span>
               <span> {"<price>"}</span>
-              <p className="sub-color text-sm underline-offset-auto">
+              <p className="sub-color text-sm underline-offset-auto underline">
                 You will pay in currency
               </p>
             </div>
@@ -225,8 +279,9 @@ const DetailForm = () => {
             </div>
             <div className="sub-color text-sm mt-4 mb-4">
               {" "}
-              With payment, you agree to the terms and conditions of Tickete &
-              the activity provider
+              With payment, you agree to the{" "}
+              <a>terms and conditions of Tickete </a>& the{" "}
+              <a>activity provider. </a>
             </div>
             <div>
               <Button
@@ -262,7 +317,10 @@ const DetailForm = () => {
                 width="350"
               />
             </div>
-            <p>Description of the travel and the booking details </p>
+            <p className="text-ellipsis ">
+              Amsterdam opeg boat canal cruise <br />- Live Ggide - from Anne
+              Frgnk House{" "}
+            </p>
             <div className="mt-4 text-sm">
               <div className="flex gap-4 mb-2">
                 {" "}
@@ -330,7 +388,11 @@ const DetailForm = () => {
               <span>
                 <Image alt="no details" src="/Tag.png" height="20" width="20" />
               </span>
-              <span>Have a promo code ?</span>
+              <span className="hidden sm:block">Have a promo code ?</span>
+              <div className="flex justify-between block sm:hidden">
+                <span>`TICKETE10` applied</span>
+                <span className="sub-color underline">Remove</span>
+              </div>
             </div>
             <hr className="mt-4 mb-4" />
             {/* total price */}
@@ -339,7 +401,7 @@ const DetailForm = () => {
                 <span>Total</span>
                 <span>{"<price>"}</span>
               </div>
-              <span className="text-sm sub-color">
+              <span className="text-sm sub-color underline">
                 You will pay in {"<currency>"}
               </span>
             </div>
@@ -455,26 +517,6 @@ const DetailForm = () => {
           </div>
         </div>
       </div>
-
-      {/* footer */}
-
-      {/* <div className="mb-8 footer-tickete">
-        <div>tickete</div>
-        <hr className="mt-4 mb-4" />
-        <div className="flex justify-between">
-          <div>
-            <span>Tickete</span>
-            <span>Privacy</span>
-            <span>Terms</span>
-            <span>Cancellation policy</span>
-          </div>
-          <div>
-            <span>insta</span>
-            <span>Facebook twitter</span>
-            <span>insta</span>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

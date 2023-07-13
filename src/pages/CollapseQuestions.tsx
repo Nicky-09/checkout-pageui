@@ -18,7 +18,6 @@ const CollapseQuestions = () => {
   return (
     <Collapse
       activeKey={activeKey}
-      // defaultActiveKey={["1", "4"]}
       onChange={handleCollapseChange}
       expandIconPosition="right"
       ghost

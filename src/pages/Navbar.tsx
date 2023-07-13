@@ -12,11 +12,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="">
-          <div className="ml-4 flex items-center">
+          <div className="ml-4 flex items-center hidden sm:block">
             <span className="text-color mr-1 rounded-md text-sm font-medium pb-1">
               <QuestionCircleFilled />
             </span>
-            <span className="text-color rounded-md text-sm font-medium">
+            <span className="text-color  rounded-md text-sm font-medium">
               Help
             </span>
           </div>

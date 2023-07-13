@@ -13,8 +13,8 @@ const Footer = () => {
         <div className="text-xl text-white mt-2 mb-8">tickete</div>
         <hr className="mt-4 mb-4" />
         <div className="flex flex-col-reverse justify-between sm:flex-row">
-          <div className="footer-link text-sm flex justify-between gap-4 mb-4">
-            <span>Tickete</span>
+          <div className="footer-link text-sm flex justify-between gap-4 mb-4 underline">
+            <span> © Tickete Inc</span>
             <span>Privacy</span>
             <span>Terms</span>
             <span>Cancellation policy</span>

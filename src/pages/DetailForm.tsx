@@ -10,6 +10,9 @@ const DetailForm = () => {
   return (
     <div className="mt-10">
       <div className="flex flex-col">
+        <h2 className="text-4xl text-color ffont-semibold mb-4 ">
+          Confirm and pay
+        </h2>
         <div className="flex flex-col-reverse justify-between gap-10 sm:flex-row">
           {/* left side bar */}
 
@@ -17,9 +20,6 @@ const DetailForm = () => {
 
           <div className="flex-1">
             <div>
-              <h2 className="text-4xl text-color ffont-semibold ">
-                Confirm and pay
-              </h2>
               <div className="mt-8">
                 <p className="text-lg mb-1">Enter your details</p>
                 <p className="sub-color text-sm">
@@ -231,7 +231,7 @@ const DetailForm = () => {
             <div>
               <Button
                 size="large"
-                className="bg-black text-white rounded-lg flex items-center"
+                className="bg-black text-white rounded-lg flex items-center justify-center w-full sm:w-1/3"
               >
                 Confirm and pay
                 <Image
@@ -389,8 +389,8 @@ const DetailForm = () => {
       {/* tickete promise */}
       <p className=" mb-6">The Tickete promise</p>
       <div className="flex flex-col justify-between sm:flex-row gap-4">
-        <div className="promise-card border-0 sm:border border-solid border-gray-300">
-          <div className="mb-6">
+        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
+          <div className="">
             <Image
               alt="no details"
               src="/CircleWavyCheck.png"
@@ -398,13 +398,15 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>Official Tickets</p>
-          <p className="sub-color text-sm">
-            Authorised reseller to top attraction
-          </p>
+          <div>
+            <p>Official Tickets</p>
+            <p className="sub-color text-sm">
+              Authorised reseller to top attraction
+            </p>
+          </div>
         </div>
-        <div className="promise-card border-0 sm:border border-solid border-gray-300">
-          <div className="mb-6">
+        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
+          <div className="">
             <Image
               alt="no details"
               src="/ChatsCircle.png"
@@ -412,13 +414,15 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>24/7 dedicated support</p>
-          <p className="sub-color text-sm">
-            {"We're here to help, talk to an expert"}
-          </p>
+          <div>
+            <p>24/7 dedicated support</p>
+            <p className="sub-color text-sm">
+              {"We're here to help, talk to an expert"}
+            </p>
+          </div>
         </div>
-        <div className="promise-card border-0 sm:border border-solid border-gray-300">
-          <div className="mb-6">
+        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
+          <div className="">
             <Image
               alt="no details"
               src="/CalendarBlank1.png"
@@ -426,13 +430,16 @@ const DetailForm = () => {
               width="30"
             />
           </div>
-          <p>Flexible bookings</p>
-          <p className="sub-color text-sm">
-            Book stress-free with easy cancellation
-          </p>
+          <div>
+            <p>Flexible bookings</p>
+            <p className="sub-color text-sm">
+              Book stress-free with easy cancellation
+            </p>
+          </div>
         </div>
-        <div className="promise-card flex flex-row justify-around border-0 gap-2 sm:border border-solid border-gray-300 sm: sm:flex-col">
-          <div className="mb-6">
+
+        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
+          <div className="">
             <Image
               alt="no details"
               src="/ShieldCheckered1.png"

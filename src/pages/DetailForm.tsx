@@ -20,7 +20,7 @@ const DetailForm = () => {
 
           <div className="flex-1">
             <div>
-              <div className="mt-8">
+              <div className="mt-0 sm:mt-8">
                 <p className="text-lg mb-1">Enter your details</p>
                 <p className="sub-color text-sm">
                   Enter your details sending you tickets{" "}
@@ -124,7 +124,7 @@ const DetailForm = () => {
                   <div className="flex items-center gap-4 text-sm">
                     <CreditCardFilled /> Credit and Debit card
                   </div>
-                  <Radio />
+                  <Radio className="radio-select" />
                 </div>
                 <div className="mt-4 flex flex-col sm:flex-row gap-4">
                   <div className="w-full">
@@ -205,7 +205,7 @@ const DetailForm = () => {
               <div className="flex items-center gap-4 text-sm">
                 <CreditCardFilled /> Klarna
               </div>
-              <Radio />
+              <Radio className="radio-select" />
             </div>
             <hr className="mt-4 mb-8" />
             {/* total price */}
@@ -218,7 +218,7 @@ const DetailForm = () => {
             </div>
             {/* receive notif */}
             <div className="mt-6 bg-radio p-4 rounded-md">
-              <Radio>
+              <Radio className="radio-select">
                 {" "}
                 Receive travel tips , suggestions and offers in city by email
               </Radio>
@@ -344,7 +344,7 @@ const DetailForm = () => {
               </span>
             </div>
             {/* free cancellation */}
-            <div className="mt-4 mb-4 bg-radio p-4 rounded-md">
+            <div className="mt-4 mb-2 sm:mb-4 bg-radio p-4 rounded-md">
               <p>Free cancellation</p>
               <p className="text-sm sub-color">
                 Cancel before {"<date>"} for a full refund

@@ -11,27 +11,13 @@ import { Button, Input, Radio, Select } from "antd";
 import Image from "next/image";
 import React from "react";
 import CollapseQuestions from "./CollapseQuestions";
+import BasicDetails from "./BasicDetails";
+import AdditionalDetails from "./AdditionalDetails";
+import CreditDetails from "./CreditDetails";
+import SideInfo from "./SideInfo";
+import PromiseCard from "./PromiseCard";
 
 const DetailForm = () => {
-  const currencies = [
-    {
-      value: "USD",
-      label: "$",
-    },
-    {
-      value: "<dropdown>",
-      label: "<dropdown>",
-    },
-    {
-      value: "BTC",
-      label: "฿",
-    },
-    {
-      value: "JPY",
-      label: "¥",
-    },
-  ];
-
   return (
     <div className="mt-10">
       <div className="flex flex-col">
@@ -39,221 +25,13 @@ const DetailForm = () => {
         <div className="flex flex-col-reverse justify-between gap-10 sm:flex-row">
           {/* left side bar */}
 
-          {/* left side bar */}
+          <div className="flex-1 border-0 sm:border-r border-gray-300 border-solid border-1 pr-3">
+            <BasicDetails />
 
-          <div className="flex-1">
-            <div>
-              <div className="mt-0 sm:mt-8">
-                <p className="text-lg mb-1 details">Enter your details</p>
-                <p className="sub-color text-sm">
-                  We'll be sending your tickets to the details below. Booking
-                  for a friend? Add their details.
-                </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <div className="w-full">
-                    <div className="w-full mb-6">
-                      <TextField
-                        label="<Full Name>"
-                        variant="outlined"
-                        defaultValue="Tickete Inc"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        fullWidth
-                      />
-                    </div>
-                    <div className="w-full">
-                      <TextField
-                        label="<Full Name>"
-                        variant="outlined"
-                        defaultValue="hi@tickete.com"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        fullWidth
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    <div className="w-full mb-6">
-                      <TextField
-                        label="<Phone Number>"
-                        variant="outlined"
-                        defaultValue="+852345345678"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        InputProps={{
-                          startAdornment: (
-                            <InputAdornment position="start">
-                              <Image
-                                alt="no details"
-                                src="/MasterFlag.png"
-                                height="30"
-                                width="30"
-                              />
-                            </InputAdornment>
-                          ),
-                        }}
-                        // size="small"
-                        fullWidth
-                      />
-                    </div>
-                    <div className="w-full ">
-                      <TextField
-                        label="<Full Name>"
-                        variant="outlined"
-                        defaultValue="hi@tickete.com"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        fullWidth
-                        error
-                        helperText="<error message>"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* additional */}
-            <div>
-              <div className="mt-10 mb-4">
-                <p className="text-lg mb-1 details">Additional information</p>
-                <p className="sub-color text-sm">
-                  We need a few more details to complete your registration{" "}
-                </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <div className="w-full">
-                    <TextField
-                      label="<Full Name>"
-                      variant="outlined"
-                      defaultValue="<custom input>"
-                      inputProps={{
-                        style: { fontSize: 14, color: "#474747" },
-                      }}
-                      fullWidth
-                    />
-                  </div>
-                  <div className="w-full ">
-                    {/* <TextField
-                      label="<dropdown>"
-                      select
-                      variant="outlined"
-                      defaultValue="EUR"
-                      inputProps={{
-                        style: { fontSize: 14, color: "#474747" },
-                      }}
-                      fullWidth
-                    /> */}
-                    <TextField
-                      select
-                      label="<dropdown>"
-                      defaultValue="<dropdown>"
-                      inputProps={{
-                        style: { fontSize: 14, color: "#474747" },
-                      }}
-                      fullWidth
-                    >
-                      {currencies.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                          {option.label}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* credit */}
-            <div>
-              <div className="mt-10">
-                <p className="text-lg mb-1 details">
-                  Select your mode of payment
-                </p>
-                <p className="sub-color text-sm">
-                  Payment with tickete are secure and encrypted.{" "}
-                </p>
-                <div className="flex justify-between mt-6 mb-6">
-                  <div className="flex items-center gap-4 text-sm">
-                    <CreditCardFilled /> Credit and Debit card
-                  </div>
-                  <Radio className="radio-select" />
-                </div>
-                <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                  <div className="w-full">
-                    <div className="w-full mb-4">
-                      <TextField
-                        label="<Name on Card>"
-                        variant="outlined"
-                        defaultValue="Tickete Inc"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        // size="small"
-                        fullWidth
-                      />
-                    </div>
+            <AdditionalDetails />
 
-                    <div className="w-full">
-                      <TextField
-                        label="<Expiry Date>"
-                        variant="outlined"
-                        defaultValue="06/26"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        // size="small"
-                        fullWidth
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full">
-                    <div className="w-full mb-4">
-                      <TextField
-                        label="<Card Number>"
-                        variant="outlined"
-                        defaultValue="1234 1234 1234 1234"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="start">
-                              <Image
-                                alt="no details"
-                                src="/Visa.png"
-                                height="70"
-                                width="70"
-                              />
-                            </InputAdornment>
-                          ),
-                        }}
-                        // endAdornment={
-                        //   <InputAdornment position="end"></InputAdornment>
-                        // }
-                        // size="small"
-                        fullWidth
-                      />
-                    </div>
-                    <div className="w-full ">
-                      <TextField
-                        label="<CVV/CVC>"
-                        variant="outlined"
-                        defaultValue="***"
-                        inputProps={{
-                          style: { fontSize: 14, color: "#474747" },
-                        }}
-                        // size="small"
-                        fullWidth
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <CreditDetails />
 
-            {/* klarna */}
             <hr className="mt-4 mb-4" />
             <div className="flex justify-between mt-4 mb-4">
               <div className="flex items-center gap-4 text-sm">
@@ -300,129 +78,14 @@ const DetailForm = () => {
             </div>
           </div>
 
-          {/* right side bar */}
-
-          {/* right side bar */}
-
-          {/* right side bar */}
-          <div>
-            <div className="relative overflow-hidden mb-2">
-              <Image
-                className="rounded-md"
-                object-fit="cover"
-                //   fill={true}
-                alt="no details"
-                src="/travel.png"
-                height="320"
-                width="350"
-              />
-            </div>
-            <p className="text-ellipsis ">
-              Amsterdam opeg boat canal cruise <br />- Live Ggide - from Anne
-              Frgnk House{" "}
-            </p>
-            <div className="mt-4 text-sm">
-              <div className="flex gap-4 mb-2">
-                {" "}
-                <span>
-                  <Image
-                    alt="no details"
-                    src="/Ticket.png"
-                    height="20"
-                    width="20"
-                  />
-                </span>
-                <span>{"<variant name>"}</span>
-              </div>
-              <div className="flex gap-4 mb-2">
-                {" "}
-                <span>
-                  <Image
-                    alt="no details"
-                    src="/CalendarBlank.png"
-                    height="20"
-                    width="20"
-                  />
-                </span>
-                <span>{"<date>"}</span>
-              </div>
-              <div className="flex gap-4 mb-2">
-                {" "}
-                <span>
-                  <Image
-                    alt="no details"
-                    src="/Clock.png"
-                    height="20"
-                    width="20"
-                  />
-                </span>
-                <span>{"<time>"}</span>
-              </div>
-            </div>
-            <hr className="mt-4 mb-6" />
-            {/* tickets overview */}
-            <div>
-              <p>Tickets Overview</p>
-              <div className="flex flex-col text-sm">
-                <div className="flex justify-between mt-2">
-                  <span>{"<pax type>"}</span>
-                  <span>{"<price>"}</span>
-                </div>
-                <div className="flex justify-between mt-2">
-                  <span>{"<pax type>"}</span>
-                  <span>{"<price>"}</span>
-                </div>
-                <div className="flex justify-between mt-2">
-                  <span>{"<fee>"}</span>
-                  <span>{"<price>"}</span>
-                </div>
-                <div className="flex justify-between mt-2 discount">
-                  <span>{"<discount applied>"}</span>
-                  <span>{"< - price>"}</span>
-                </div>
-              </div>
-            </div>
-            <hr className="mt-4 mb-4" />
-            {/* promo cdde  */}
-            <div className="flex gap-4 text-sm discount">
-              <span>
-                <Image alt="no details" src="/Tag.png" height="20" width="20" />
-              </span>
-              <span className="hidden sm:block">Have a promo code ?</span>
-              <div className="flex justify-between block sm:hidden">
-                <span>`TICKETE10` applied</span>
-                <span className="sub-color underline">Remove</span>
-              </div>
-            </div>
-            <hr className="mt-4 mb-4" />
-            {/* total price */}
-            <div>
-              <div className="flex justify-between">
-                <span>Total</span>
-                <span>{"<price>"}</span>
-              </div>
-              <span className="text-sm sub-color underline">
-                You will pay in {"<currency>"}
-              </span>
-            </div>
-            {/* free cancellation */}
-            <div className="mt-4 mb-2 sm:mb-4 bg-radio p-4 rounded-md">
-              <p>Free cancellation</p>
-              <p className="text-sm sub-color">
-                Cancel before {"<date>"} for a full refund
-              </p>
-            </div>
-          </div>
+          <SideInfo />
         </div>
 
-        {/* frequently sked questions */}
-
-        {/* frequently sked questions */}
         <hr className="mt-4 mb-4" />
         <div className="flex flex-col justify-between gap-10 sm:flex-row">
           <div>
             <p className="text-lg mt-4">Frequently asked questions</p>
-            <div className="mt-4">
+            <div className="collapsible-container-sm sm:collapsible-container mt-4">
               <CollapseQuestions />
             </div>
           </div>
@@ -448,75 +111,8 @@ const DetailForm = () => {
       </div>
 
       <hr className="mt-4 mb-10" />
-      {/* tickete promise */}
       <p className=" mb-6">The Tickete promise</p>
-      <div className="flex flex-col justify-between sm:flex-row gap-4">
-        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
-          <div className="">
-            <Image
-              alt="no details"
-              src="/CircleWavyCheck.png"
-              height="30"
-              width="30"
-            />
-          </div>
-          <div>
-            <p>Official Tickets</p>
-            <p className="sub-color text-sm">
-              Authorised reseller to top attraction
-            </p>
-          </div>
-        </div>
-        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
-          <div className="">
-            <Image
-              alt="no details"
-              src="/ChatsCircle.png"
-              height="30"
-              width="30"
-            />
-          </div>
-          <div>
-            <p>24/7 dedicated support</p>
-            <p className="sub-color text-sm">
-              {"We're here to help, talk to an expert"}
-            </p>
-          </div>
-        </div>
-        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
-          <div className="">
-            <Image
-              alt="no details"
-              src="/CalendarBlank1.png"
-              height="30"
-              width="30"
-            />
-          </div>
-          <div>
-            <p>Flexible bookings</p>
-            <p className="sub-color text-sm">
-              Book stress-free with easy cancellation
-            </p>
-          </div>
-        </div>
-
-        <div className="promise-card flex flex-row border-0 sm:border  sm:flex-col border-solid border-gray-300 gap-6">
-          <div className="">
-            <Image
-              alt="no details"
-              src="/ShieldCheckered1.png"
-              height="30"
-              width="30"
-            />
-          </div>
-          <div>
-            <p>100% secure payments</p>
-            <p className="sub-color text-sm">
-              Internationally recognized encrypted payment process
-            </p>
-          </div>
-        </div>
-      </div>
+      <PromiseCard />
     </div>
   );
 };

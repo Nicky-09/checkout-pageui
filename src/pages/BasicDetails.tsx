@@ -1,6 +1,7 @@
 import { InputAdornment, TextField } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import CustomTextField from "./CustomTextField";
 
 const BasicDetails = () => {
   return (
@@ -14,35 +15,12 @@ const BasicDetails = () => {
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <div className="w-full">
             <div className="w-full mb-6">
-              <TextField
-                sx={{
-                  "& label": {
-                    fontWeight: 300,
-                  },
-                }}
-                label="Full Name"
-                variant="outlined"
-                defaultValue="Tickete Inc"
-                inputProps={{
-                  style: { fontSize: 14, color: "#474747" },
-                }}
-                fullWidth
-              />
+              <CustomTextField label="Full Name" defaultValue="Tickete Inc" />
             </div>
             <div className="w-full">
-              <TextField
-                sx={{
-                  "& label": {
-                    fontWeight: 300,
-                  },
-                }}
+              <CustomTextField
                 label="<Full Name>"
-                variant="outlined"
                 defaultValue="hi@tickete.com"
-                inputProps={{
-                  style: { fontSize: 14, color: "#474747" },
-                }}
-                fullWidth
               />
             </div>
           </div>

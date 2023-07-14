@@ -1,21 +1,22 @@
 import { MenuItem, TextField } from "@mui/material";
 import React from "react";
+import CustomTextField from "./CustomTextField";
 const currencies = [
   {
-    value: "USD",
-    label: "$",
-  },
-  {
-    value: "<dropdown>",
+    value: "<dropdown1>",
     label: "<dropdown>",
   },
   {
-    value: "BTC",
-    label: "฿",
+    value: "<dropdown2>",
+    label: "<dropdown>",
   },
   {
-    value: "JPY",
-    label: "¥",
+    value: "<dropdown3>",
+    label: "<dropdown>",
+  },
+  {
+    value: "<dropdown4>",
+    label: "<dropdown>",
   },
 ];
 const AdditionalDetails = () => {
@@ -28,19 +29,9 @@ const AdditionalDetails = () => {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <div className="w-full">
-            <TextField
-              sx={{
-                "& label": {
-                  fontWeight: 300,
-                },
-              }}
+            <CustomTextField
               label="<Full Name>"
-              variant="outlined"
               defaultValue="<custom input>"
-              inputProps={{
-                style: { fontSize: 14, color: "#474747" },
-              }}
-              fullWidth
             />
           </div>
           <div className="w-full ">
@@ -51,15 +42,17 @@ const AdditionalDetails = () => {
                   fontWeight: 300,
                 },
               }}
-              label="<dropdown>"
-              defaultValue="<dropdown>"
               inputProps={{
                 style: { fontSize: 14, color: "#474747" },
               }}
               fullWidth
             >
               {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
+                <MenuItem
+                  key={option.value}
+                  value={option.value}
+                  defaultValue="<dropdown>"
+                >
                   {option.label}
                 </MenuItem>
               ))}

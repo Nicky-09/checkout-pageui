@@ -3,6 +3,7 @@ import { InputAdornment, TextField } from "@mui/material";
 import { Radio } from "antd";
 import Image from "next/image";
 import React from "react";
+import CustomTextField from "./CustomTextField";
 
 const CreditDetails = () => {
   return (
@@ -21,39 +22,14 @@ const CreditDetails = () => {
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
           <div className="w-full">
             <div className="w-full mb-4">
-              <TextField
-                sx={{
-                  "& label": {
-                    fontWeight: 300,
-                  },
-                }}
+              <CustomTextField
                 label="<Name on Card>"
-                variant="outlined"
                 defaultValue="Tickete Inc"
-                inputProps={{
-                  style: { fontSize: 14, color: "#474747" },
-                }}
-                // size="small"
-                fullWidth
               />
             </div>
 
             <div className="w-full">
-              <TextField
-                sx={{
-                  "& label": {
-                    fontWeight: 300,
-                  },
-                }}
-                label="<Expiry Date>"
-                variant="outlined"
-                defaultValue="06/26"
-                inputProps={{
-                  style: { fontSize: 14, color: "#474747" },
-                }}
-                // size="small"
-                fullWidth
-              />
+              <CustomTextField label="<Expiry Date>" defaultValue="06/26" />
             </div>
           </div>
           <div className="w-full">
@@ -86,21 +62,7 @@ const CreditDetails = () => {
               />
             </div>
             <div className="w-full ">
-              <TextField
-                sx={{
-                  "& label": {
-                    fontWeight: 300,
-                  },
-                }}
-                label="<CVV/CVC>"
-                variant="outlined"
-                defaultValue="***"
-                inputProps={{
-                  style: { fontSize: 14, color: "#474747" },
-                }}
-                // size="small"
-                fullWidth
-              />
+              <CustomTextField label="<CVV/CVC>" defaultValue="***" />
             </div>
           </div>
         </div>

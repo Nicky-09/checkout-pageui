@@ -29,7 +29,7 @@ body {
 .sub-color {
   color: #595959;
   font-weight: 300;
-  font-size: 15px;
+  /* font-size: 15px; */
   line-height: 24px;
 }
 
@@ -126,4 +126,8 @@ body {
   padding-right: 32px;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.links {
+  color: rgb(23, 51, 182);
 }

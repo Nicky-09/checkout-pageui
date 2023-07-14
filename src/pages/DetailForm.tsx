@@ -44,7 +44,7 @@ const DetailForm = () => {
             <div className="text-xl details">
               <span>Total: </span>
               <span> {"<price>"}</span>
-              <p className="sub-color text-sm underline-offset-auto underline">
+              <p className="sub-color text-xs underline-offset-auto underline">
                 You will pay in currency
               </p>
             </div>
@@ -55,11 +55,11 @@ const DetailForm = () => {
                 Receive travel tips , suggestions and offers in city by email
               </Radio>
             </div>
-            <div className="sub-color text-sm mt-4 mb-4">
+            <div className="sub-color text-xs mt-4 mb-4">
               {" "}
               With payment, you agree to the{" "}
-              <a>terms and conditions of Tickete </a>& the{" "}
-              <a>activity provider. </a>
+              <a className="links">terms and conditions of Tickete </a>& the{" "}
+              <a className="links">activity provider. </a>
             </div>
             <div>
               <Button

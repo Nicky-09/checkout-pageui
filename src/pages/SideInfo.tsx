@@ -89,7 +89,7 @@ const SideInfo = () => {
           <span>Total</span>
           <span>{"<price>"}</span>
         </div>
-        <span className="text-sm sub-color underline">
+        <span className="text-xs sub-color underline">
           You will pay in {"<currency>"}
         </span>
       </div>
